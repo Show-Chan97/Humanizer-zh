@@ -18,7 +18,15 @@ Humanizer-zh 是一个用于去除文本中 AI 生成痕迹的工具，帮助你
 
 ## 安装
 
-### 方法一：通过 Git 克隆（推荐）
+### 方法一：通过 npx 一键安装（推荐）
+
+```bash
+npx skills add https://github.com/Show-Chan97/Humanizer-zh.git
+```
+
+这是最简单的安装方式，会自动将技能安装到正确的目录。
+
+### 方法二：通过 Git 克隆
 
 ```bash
 # Claude Code 用户
@@ -30,20 +38,7 @@ mkdir -p ~/.config/opencode/skills
 git clone https://github.com/Show-Chan97/Humanizer-zh.git ~/.config/opencode/skills/Humanizer-zh
 ```
 
-### 方法二：通过 npx 一键安装
-
-```bash
-npx skills add https://github.com/Show-Chan97/Humanizer-zh.git
-```
-
-注：此方法需要系统中已安装 Node.js 且能正常运行 npx。如果失败，请使用方法一。
-
-### 方法二：通过 Git 克隆
-
-```bash
-# 克隆到 Claude Code 的 skills 目录
-git clone https://github.com/Show-Chan97/Humanizer-zh.git ~/.claude/skills/Humanizer-zh
-```
+注：OpenCode 也会扫描 `~/.claude/skills/`，因此只需克隆一次即可。
 
 ### 方法三：手动安装
 

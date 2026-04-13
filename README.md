@@ -18,13 +18,25 @@ Humanizer-zh 是一个用于去除文本中 AI 生成痕迹的工具，帮助你
 
 ## 安装
 
-### 方法一：通过 npx 一键安装（推荐）
+### 方法一：通过 Git 克隆（推荐）
+
+```bash
+# Claude Code 用户
+mkdir -p ~/.claude/skills
+git clone https://github.com/Show-Chan97/Humanizer-zh.git ~/.claude/skills/Humanizer-zh
+
+# OpenCode 用户
+mkdir -p ~/.config/opencode/skills
+git clone https://github.com/Show-Chan97/Humanizer-zh.git ~/.config/opencode/skills/Humanizer-zh
+```
+
+### 方法二：通过 npx 一键安装
 
 ```bash
 npx skills add https://github.com/Show-Chan97/Humanizer-zh.git
 ```
 
-这是最简单的安装方式，会自动将技能安装到正确的目录。
+注：此方法需要系统中已安装 Node.js 且能正常运行 npx。如果失败，请使用方法一。
 
 ### 方法二：通过 Git 克隆
 
@@ -40,12 +52,14 @@ git clone https://github.com/Show-Chan97/Humanizer-zh.git ~/.claude/skills/Human
    - **macOS/Linux**: `~/.claude/skills/`
    - **Windows**: `%USERPROFILE%\.claude\skills\`
 
-3. 确保文件夹结构如下：
-   ```
-   ~/.claude/skills/Humanizer-zh/
-   ├── SKILL.md       # 技能定义文件（中文版）
-   └── README.md      # 说明文档
-   ```
+### 文件结构
+
+```
+~/.claude/skills/Humanizer-zh/
+├── SKILL.md       # 技能定义文件（核心，AI 读取此文件）
+├── README.md      # 说明文档（面向人类）
+└── WARP.md        # Warp 终端 AI 上下文
+```
 
 ### 验证安装
 
@@ -93,7 +107,9 @@ git clone https://github.com/Show-Chan97/Humanizer-zh.git ~/.claude/skills/Human
 
 ## 检测的 AI 写作模式
 
-本工具能够识别并修复 **29 种** AI 写作痕迹，分为五大类：
+本工具能够识别并修复 **29 种** AI 写作痕迹，分为五大类。
+
+> **注：** 中文版按模式分类进行了分组显示，其编号顺序与英文原版 [blader/humanizer](https://github.com/blader/humanizer) 略有不同，但包含的 29 种模式完全一致。
 
 ### 📝 内容模式（7种）
 1. 过度强调意义、遗产和更广泛的趋势
@@ -129,7 +145,7 @@ git clone https://github.com/Show-Chan97/Humanizer-zh.git ~/.claude/skills/Human
 25. 填充短语
 26. 过度限定
 27. 通用积极结论
-28. **碎片化引导句**（新增）
+28. **被动语态和无主语片段**（新增）
 29. **标题后的碎片化引导句**（新增）
 
 ## 核心功能
@@ -193,7 +209,7 @@ Humanizer-zh 内置**自问自答审查步骤**：
 
 以下词汇在 AI 生成文本中出现频率异常高：
 
-`此外`、`至关重要`、`深入探讨`、`强调`、`持久的`、`增强`、`培养`、`获得`、`突出`、`相互作用`、`复杂/复杂性`、`格局`、`关键性的`、`展示`、`织锦`、`证明`、`宝贵的`、`充渴活力的`……
+`此外`、`至关重要`、`深入探讨`、`强调`、`持久的`、`增强`、`培养`、`获得`、`突出`、`相互作用`、`复杂/复杂性`、`格局`、`关键性的`、`展示`、`织锦`、`证明`、`宝贵的`、`充满活力的`……
 
 ## 文件说明
 
@@ -209,9 +225,16 @@ Humanizer-zh 内置**自问自答审查步骤**：
 - [blader/humanizer](https://github.com/blader/humanizer) - 原始英文版项目
 - [hardikpandya/stop-slop](https://github.com/hardikpandya/stop-slop) - 实用工具部分的灵感来源
 
+## 版本历史
+
+- **2.5.1-zh** - 基于 blader/humanizer v2.5.1 重新翻译，合并 op7418 的核心规则和评分标准，目前支持 29 种模式。
+- **2.5.0-zh** - 早期中文版，基于 blader v2.4.0（25 种模式）。
+- **上游更新**：持续跟进 blader/humanizer 的模式增加与逻辑优化。
+
 ## 许可
 
 本项目遵循 MIT 许可协议。
+
 
 ---
 

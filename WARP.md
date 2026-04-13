@@ -26,7 +26,13 @@
 
 ### 安装技能到 Claude Code
 
-推荐方式（直接克隆到 skills 目录）：
+推荐方式（通过 npx 一键安装）：
+
+```bash
+npx skills add https://github.com/Show-Chan97/Humanizer-zh.git
+```
+
+备选方式（如果 npx 不可用，通过 Git 克隆）：
 
 ```bash
 mkdir -p ~/.claude/skills

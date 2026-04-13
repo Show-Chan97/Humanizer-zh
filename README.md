@@ -208,8 +208,9 @@ Humanizer-zh 内置**自问自答审查步骤**：
 
 ## 文件说明
 
-- **`SKILL.md`** - 中文版技能定义文件（完整指南）
-- **`README.md`** - 本说明文档
+- **`SKILL.md`** - 技能定义文件（核心，AI 读取此文件）
+- **`README.md`** - 本说明文档（面向人类）
+- **`WARP.md`** - Warp 终端 AI 上下文说明
 
 **注：** 英文原版请参考 [blader/humanizer](https://github.com/blader/humanizer)
 
